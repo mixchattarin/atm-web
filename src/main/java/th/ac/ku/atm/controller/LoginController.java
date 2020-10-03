@@ -16,7 +16,10 @@ public class LoginController {
 
     private CustomerService customerService;
     private BankAccountService bankAccountService;
-    public LoginController(CustomerService customerService ,BankAccountService bankAccountService) {
+
+
+
+    public LoginController(CustomerService customerService , BankAccountService bankAccountService) {
         this.bankAccountService = bankAccountService;
         this.customerService = customerService;
     }
@@ -29,7 +32,6 @@ public class LoginController {
     public String login(@ModelAttribute Customer customer, Model model) {
         // 1. เอา id กับ pin ไปเช็คกับข้อมูล customer ที่มีอยู่ ว่าตรงกันบ้างไหม
         Customer storedCustomer = customerService.checkPin(customer);
-
         // 2. ถ้าตรง ส่งข้อมูล customer กลับไปแสดงผล
         if (storedCustomer != null) {
             model.addAttribute("customertitle",
