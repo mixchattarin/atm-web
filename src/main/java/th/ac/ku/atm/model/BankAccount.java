@@ -10,6 +10,8 @@ public class BankAccount {
     private String type;
     private double balance;
 
+    public BankAccount() {}
+
     public BankAccount(int id, int customerId, String type, double balance) {
         this.id = id;
         this.customerId = customerId;
