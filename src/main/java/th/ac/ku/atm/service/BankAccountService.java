@@ -62,6 +62,11 @@ public class BankAccountService {
 
         return Arrays.asList(accounts);
     }
+    public void deleteBankAccount(BankAccount bankAccount) {
+        String url = "http://localhost:8091/api/bankaccount/" + bankAccount.getId();
+
+        restTemplate.delete(url);
+    }
     @PostConstruct
     public void postConstruct() {
         bankAccountList = new ArrayList<>();
